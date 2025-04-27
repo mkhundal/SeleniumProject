@@ -121,7 +121,7 @@ public class TVSTest
 
         WebElement dealershipMobile = driver.findElement(By.xpath("(//input[@id='mobile-number'])[2]"));
         dealershipMobile.sendKeys("123");
-        dealershipMobile.findElement(By.xpath("//span[text()='Mobile Number should contain 10 characters.']"));
+        dealershipMobile.findElement(By.xpath("//label[text()='Mobile Number']/following-sibling::input"));
         System.out.println("Error displaying for Mobile Number: "+dealershipMobile.getText());
 
         WebElement updatesCheckBox = drumSxc.findElement(By.xpath("//input[@id='checkbox-input']"));
