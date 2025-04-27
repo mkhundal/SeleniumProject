@@ -1,4 +1,4 @@
-package com.tvsMotors.pageObjects;
+package com.Practice.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
     WebDriver driver;
 
-    @FindBy(xpath = "https://www.tvsmotor.com/")
+    @FindBy(xpath = "//a[@href='https://www.tvsmotor.com/book-online']")
     private WebElement buyVehicle;
+
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
+    }
 
     public WebDriver getDriver() {
         return driver;
@@ -27,8 +32,5 @@ public class HomePage {
         this.buyVehicle = buyVehicle;
     }
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-    }
+
 }

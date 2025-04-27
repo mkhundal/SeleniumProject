@@ -1,8 +1,9 @@
-package com.tvsMotors.pageObjects;
+package com.Practice.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class BookOnlinePage
 {
@@ -32,9 +33,11 @@ public class BookOnlinePage
 
     public BookOnlinePage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
 
-    public WebElement getMotorLink() {
+    public WebElement getMotorLink()
+    {
         return motorLink;
     }
 
